@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="/addplaylist" method="post">
+    <label>Playlist Name</label>
+    <input type="text" name="name">
+    <br>
+    <!-- Assuming songslist is an array of objects containing id and name properties -->
+    <div th:each="song : ${songslist}">
+        <input type="checkbox" name="songs" th:value="${song.id}">
+        <label th:text="${song.name}"></label>
+        <br>
+    </div>
+    <input type="submit" value="ADD PLAYLIST">
+</form>
+</body>
+</html>
